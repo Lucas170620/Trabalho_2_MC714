@@ -60,7 +60,7 @@ class Lamport:
                 processos[contador.valor].atualiza_tempo_atual(tsm+1)
                 tsm = -1
 
-            if (contador.valor == 2 or contador.valor == 0) and tsm < 0:
+            if (contador.valor == len(processos)-1 or contador.valor == 0) and tsm < 0:
                 #Esse if verifica se ta nos extremos dos processos e se tem uma mensagem montada
                 # se ta no extremo e não tem mensagem montado o processo vai mandar mensagem de volta
                 contador.reverter()
